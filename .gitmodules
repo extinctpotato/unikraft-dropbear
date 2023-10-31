@@ -1,0 +1,3 @@
+[submodule "lib/unikraft"]
+	path = lib/unikraft
+	url = https://github.com/unikraft/unikraft
