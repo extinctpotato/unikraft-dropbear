@@ -1,3 +1,9 @@
 [submodule "lib/unikraft"]
 	path = lib/unikraft
 	url = https://github.com/unikraft/unikraft
+[submodule "lib/lib-musl"]
+	path = lib/lib-musl
+	url = https://github.com/unikraft/lib-musl
+[submodule "lib/lib-lwip"]
+	path = lib/lib-lwip
+	url = https://github.com/unikraft/lib-lwip
