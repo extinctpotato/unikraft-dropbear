@@ -1,0 +1,6 @@
+name        := "dropbear"
+description := "Dropbear SSH"
+homepage    := "https://matt.ucc.asn.au/dropbear/dropbear.html"
+version     := 1.15.6 sha256:a3d8c67c2035808c7c0d475fffe263db8c353b11521aa7ade468b780ed826cc6 http://nginx.org/download/nginx-1.15.6.tar.gz
+version     := 2022.83 sha256:bc5a121ffbc94b5171ad5ebe01be42746d50aa797c9549a4639894a16749443b https://matt.ucc.asn.au/dropbear/releases/dropbear-2022.83.tar.bz2
+license     := "BSD-2-Clause"
