@@ -1,0 +1,79 @@
+################################################################################
+# Library registration
+################################################################################
+$(eval $(call addlib_s,libdropbear,$(CONFIG_LIBDROPBEAR)))
+
+################################################################################
+# Sources
+################################################################################
+# https://github.com/mkj/dropbear/archive/refs/tags/DROPBEAR_2022.83.tar.gz
+# https://matt.ucc.asn.au/dropbear/releases/dropbear-2022.83.tar.bz2
+LIBDROPBEAR_VERSION = 2022.83
+LIBDROPBEAR_BASENAME = dropbear-$(LIBDROPBEAR_VERSION)
+LIBDROPBEAR_URL = https://matt.ucc.asn.au/dropbear/releases/$(LIBDROPBEAR_BASENAME).tar.bz2 
+#LIBDROPBEAR_PATCHDIR = $(LIBDROPBEAR_BASE)/patches
+$(eval $(call fetch,libdropbear,$(LIBDROPBEAR_URL)))
+#$(eval $(call patch,libdropbear,$(LIBDROPBEAR_PATCHDIR),$(LIBDROPBEAR_BASENAME)))
+
+LIBDROPBEAR_SRC = $(LIBDROPBEAR_ORIGIN)/$(LIBDROPBEAR_BASENAME)/src
+
+################################################################################
+# Main function include
+################################################################################
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_BASE)/main.c|unikraft
+
+################################################################################
+# Flags
+################################################################################
+LIBDROPBEAR_FLAGS = -Wpointer-arith -Dmain=dropbear_main
+
+# Suppress some warnings to make the build process look neater
+LIBDROPBEAR_FLAGS_SUPPRESS = -Wno-unused-parameter -Wno-unused-variable    \
+-Wno-unused-but-set-variable -Wno-unused-value
+
+LIBDROPBEAR_CFLAGS-y +=  $(LIBDROPBEAR_FLAGS)
+LIBDROPBEAR_CFLAGS-y +=  $(LIBDROPBEAR_FLAGS_SUPPRESS)
+
+CINCLUDES-y += -I$(LIBDROPBEAR_BASE)/include
+
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/dbutil.o
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/buffer.c
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/dbhelpers.c
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/dss.c
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/bignum.c
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/signkey.c
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/rsa.c
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/dbrandom.c
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/queue.c
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/atomicio.c
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/compat.c
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/fake-rfc2553.c
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/ltc_prng.c
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/ecc.c
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/ecdsa.c
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/sk-ecdsa.c
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/crypto_desc.c
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/curve25519.c
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/ed25519.c
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/sk-ed25519.c
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/dbmalloc.c
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/gensignkey.c
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/gendss.c
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/genrsa.c
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/gened25519.c
+
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/svr-kex.o
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/svr-auth.o
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/sshpty.o
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/svr-authpasswd.o
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/svr-authpubkey.o 
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/svr-authpubkeyoptions.o 
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/svr-session.o 
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/svr-service.o
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/svr-chansession.o 
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/svr-runopts.o 
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/svr-agentfwd.o 
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/svr-main.o 
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/svr-x11fwd.o
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/svr-tcpfwd.o 
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/svr-authpam.o
