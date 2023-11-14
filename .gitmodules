@@ -7,3 +7,6 @@
 [submodule "lib/lib-lwip"]
 	path = lib/lib-lwip
 	url = https://github.com/unikraft/lib-lwip
+[submodule "lib/lib-zlib"]
+	path = lib/lib-zlib
+	url = https://github.com/unikraft/lib-zlib.git
