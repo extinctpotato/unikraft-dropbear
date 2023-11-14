@@ -15,7 +15,7 @@ LIBDROPBEAR_URL = https://matt.ucc.asn.au/dropbear/releases/$(LIBDROPBEAR_BASENA
 $(eval $(call fetch,libdropbear,$(LIBDROPBEAR_URL)))
 #$(eval $(call patch,libdropbear,$(LIBDROPBEAR_PATCHDIR),$(LIBDROPBEAR_BASENAME)))
 
-LIBDROPBEAR_SRC = $(LIBDROPBEAR_ORIGIN)/$(LIBDROPBEAR_BASENAME)/src
+LIBDROPBEAR_SRC = $(LIBDROPBEAR_ORIGIN)/$(LIBDROPBEAR_BASENAME)
 
 ################################################################################
 # Main function include
