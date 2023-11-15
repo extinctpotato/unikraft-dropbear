@@ -164,7 +164,7 @@
 #define HAVE_LIBZ 1
 
 /* Define to 1 if you have the <linux/pkt_sched.h> header file. */
-#define HAVE_LINUX_PKT_SCHED_H 1
+/* #define HAVE_LINUX_PKT_SCHED_H 1 */
 
 /* Have login() function */
 #define HAVE_LOGIN 1
