@@ -1,0 +1,15 @@
+on:
+  push:
+
+jobs:
+  build-default-x86_64:
+    runs-on: ubuntu-latest
+    container: debian:bookworm
+    steps:
+      - run: apt -qqy update && apt -qqy install build-essential git flex bison wget unzip
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - run: pwd && ls -alh
+      - run: UK_DEFCONFIG=$(pwd)/defconfigs/qemu-x86_64 make defconfig
+      - run: make
