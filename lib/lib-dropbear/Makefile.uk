@@ -145,6 +145,7 @@ LIBDROPBEAR_TOMCRYPT_SRCS-y += $(LIBDROPBEAR_SRC)/libtomcrypt/src/hashes/rmd256.
 LIBDROPBEAR_TOMCRYPT_SRCS-y += $(LIBDROPBEAR_SRC)/libtomcrypt/src/hashes/rmd320.c
 LIBDROPBEAR_TOMCRYPT_SRCS-y += $(LIBDROPBEAR_SRC)/libtomcrypt/src/hashes/sha1.c
 LIBDROPBEAR_TOMCRYPT_SRCS-y += $(LIBDROPBEAR_SRC)/libtomcrypt/src/hashes/sha2/sha256.c
+LIBDROPBEAR_TOMCRYPT_SRCS-y += $(LIBDROPBEAR_SRC)/libtomcrypt/src/hashes/sha2/sha384.c
 LIBDROPBEAR_TOMCRYPT_SRCS-y += $(LIBDROPBEAR_SRC)/libtomcrypt/src/hashes/sha2/sha512_224.c
 LIBDROPBEAR_TOMCRYPT_SRCS-y += $(LIBDROPBEAR_SRC)/libtomcrypt/src/hashes/sha2/sha512_256.c
 LIBDROPBEAR_TOMCRYPT_SRCS-y += $(LIBDROPBEAR_SRC)/libtomcrypt/src/hashes/sha2/sha512.c
