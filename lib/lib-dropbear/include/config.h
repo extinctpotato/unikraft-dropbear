@@ -80,7 +80,7 @@
 #define HAVE_CRYPT_H 1
 
 /* Define to 1 if you have the `daemon' function. */
-#define HAVE_DAEMON 1
+/* #define HAVE_DAEMON 1 */
 
 /* Use /dev/ptc & /dev/pts */
 /* #undef HAVE_DEV_PTS_AND_PTC */
@@ -167,13 +167,13 @@
 /* #define HAVE_LINUX_PKT_SCHED_H 1 */
 
 /* Have login() function */
-#define HAVE_LOGIN 1
+/* #define HAVE_LOGIN 1 */
 
 /* Define to 1 if you have the `logout' function. */
-#define HAVE_LOGOUT 1
+/* #define HAVE_LOGOUT 1 */
 
 /* Define to 1 if you have the `logwtmp' function. */
-#define HAVE_LOGWTMP 1
+/* #define HAVE_LOGWTMP 1 */
 
 /* Define to 1 if you have the `mach_absolute_time' function. */
 /* #undef HAVE_MACH_ABSOLUTE_TIME */
