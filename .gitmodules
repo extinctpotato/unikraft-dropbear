@@ -10,3 +10,6 @@
 [submodule "lib/lib-zlib"]
 	path = lib/lib-zlib
 	url = https://github.com/unikraft/lib-zlib.git
+[submodule "lib/lib-compiler-rt"]
+	path = lib/lib-compiler-rt
+	url = https://github.com/unikraft/lib-compiler-rt.git
