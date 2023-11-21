@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     container: debian:bookworm
     steps:
-      - run: apt -qqy update && apt -qqy install build-essential git flex bison wget python3
+      - run: apt -qqy update && apt -qqy install build-essential git flex bison wget python3 unzip
       - uses: actions/checkout@v4
         with:
           submodules: true
