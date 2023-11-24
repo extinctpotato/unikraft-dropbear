@@ -29,6 +29,7 @@ LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_BASE)/main.c|unikraft
 ################################################################################
 LIBDROPBEAR_FLAGS = -Wpointer-arith -DDROPBEAR_SERVER
 LIBDROPBEAR_SVR-MAIN_FLAGS = -Dmain=custom_dropbear_main
+LIBDROPBEAR_DROPBEARKEY_FLAGS = -Dmain=dropbearkey_main
 
 # Suppress some warnings to make the build process look neater
 LIBDROPBEAR_FLAGS_SUPPRESS = -Wno-unused-parameter -Wno-unused-variable    \
@@ -676,3 +677,5 @@ LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/list.c
 LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/netio.c
 LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/chachapoly.c
 LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/gcm.c
+
+LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/dropbearkey.c
