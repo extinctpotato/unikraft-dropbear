@@ -32,6 +32,6 @@ int main(int argc, char *argv[]) {
 		dropbearkey_main(5, arguments);
 	}
 
-	char *dropbear_arguments[] = {"dummy", "-F"};
-	return custom_dropbear_main(2, dropbear_arguments);
+	char *dropbear_arguments[] = {"dummy", "-F", "-B"};
+	return custom_dropbear_main(3, dropbear_arguments);
 }
