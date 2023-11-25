@@ -7,6 +7,8 @@
 /* Broken getaddrinfo */
 /* #undef BROKEN_GETADDRINFO */
 
+#define DEBUG_NOFORK 1
+
 /* Use bundled libtom */
 #define BUNDLED_LIBTOM 1
 
