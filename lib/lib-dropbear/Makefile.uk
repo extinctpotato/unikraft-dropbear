@@ -27,16 +27,11 @@ LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_BASE)/main.c|unikraft
 ################################################################################
 # Flags
 ################################################################################
-LIBDROPBEAR_FLAGS = -Wpointer-arith -DDROPBEAR_SERVER
+LIBDROPBEAR_FLAGS = -DDROPBEAR_SERVER
 LIBDROPBEAR_SVR-MAIN_FLAGS = -Dmain=custom_dropbear_main
 LIBDROPBEAR_DROPBEARKEY_FLAGS = -Dmain=dropbearkey_main
 
-# Suppress some warnings to make the build process look neater
-LIBDROPBEAR_FLAGS_SUPPRESS = -Wno-unused-parameter -Wno-unused-variable    \
--Wno-unused-but-set-variable -Wno-unused-value
-
 LIBDROPBEAR_CFLAGS-y +=  $(LIBDROPBEAR_FLAGS)
-LIBDROPBEAR_CFLAGS-y +=  $(LIBDROPBEAR_FLAGS_SUPPRESS)
 LIBDROPBEAR_TOMCRYPT_CFLAGS-y += -DLTC_SOURCE
 
 CINCLUDES-y += -I$(LIBDROPBEAR_BASE)/include
