@@ -33,6 +33,9 @@ LIBDROPBEAR_DROPBEARKEY_FLAGS = -Dmain=dropbearkey_main
 LIBDROPBEAR_CFLAGS-y += -DDROPBEAR_SERVER 
 LIBDROPBEAR_TOMCRYPT_CFLAGS-y += -DLTC_SOURCE
 
+################################################################################
+# Includes
+################################################################################
 CINCLUDES-y += -I$(LIBDROPBEAR_BASE)/include
 
 LIBDROPBEAR_CINCLUDES-y += -I$(LIBDROPBEAR_SRC)
@@ -46,6 +49,9 @@ LIBDROPBEAR_TOMCRYPT_CINCLUDES-y += -I$(LIBDROPBEAR_SRC)
 LIBDROPBEAR_TOMCRYPT_CINCLUDES-y += -I$(LIBDROPBEAR_SRC)/libtomcrypt/src/headers
 LIBDROPBEAR_TOMCRYPT_CINCLUDES-y += -I$(LIBDROPBEAR_SRC)/libtommath
 
+################################################################################
+# Sources
+################################################################################
 LIBDROPBEAR_TOMCRYPT_SRCS-y += $(LIBDROPBEAR_SRC)/libtomcrypt/src/ciphers/aes/aes.c
 LIBDROPBEAR_TOMCRYPT_SRCS-y += $(LIBDROPBEAR_SRC)/libtomcrypt/src/ciphers/anubis.c
 LIBDROPBEAR_TOMCRYPT_SRCS-y += $(LIBDROPBEAR_SRC)/libtomcrypt/src/ciphers/blowfish.c
@@ -610,6 +616,7 @@ LIBDROPBEAR_TOMMATH_SRCS-y += $(LIBDROPBEAR_SRC)/libtommath/bn_mp_set_i64.c
 LIBDROPBEAR_TOMMATH_SRCS-y += $(LIBDROPBEAR_SRC)/libtommath/bn_mp_div_3.c
 LIBDROPBEAR_TOMMATH_SRCS-y += $(LIBDROPBEAR_SRC)/libtommath/bn_s_mp_mul_high_digs.c
 
+# Basic dropbear sources
 LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/dbutil.c
 LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/buffer.c
 LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/dbhelpers.c
@@ -636,6 +643,7 @@ LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/gendss.c
 LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/genrsa.c
 LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/gened25519.c
 
+# Server-exclusive sources
 LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/svr-kex.c
 LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/svr-auth.c
 LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/sshpty.c
@@ -652,6 +660,7 @@ LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/svr-x11fwd.c
 LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/svr-tcpfwd.c
 LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/svr-authpam.c
 
+# Common sources
 LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/common-algo.c
 LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/common-channel.c
 LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/common-chansession.c
@@ -659,6 +668,7 @@ LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/common-kex.c
 LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/common-runopts.c
 LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/common-session.c
 
+# Misc
 LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/packet.c
 LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/termcodes.c
 LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/loginrec.c
@@ -672,4 +682,5 @@ LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/netio.c
 LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/chachapoly.c
 LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/gcm.c
 
+# dropbearkey CLI utility
 LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_SRC)/dropbearkey.c
