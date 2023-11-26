@@ -27,11 +27,10 @@ LIBDROPBEAR_SRCS-y += $(LIBDROPBEAR_BASE)/main.c|unikraft
 ################################################################################
 # Flags
 ################################################################################
-LIBDROPBEAR_FLAGS = -DDROPBEAR_SERVER
 LIBDROPBEAR_SVR-MAIN_FLAGS = -Dmain=custom_dropbear_main
 LIBDROPBEAR_DROPBEARKEY_FLAGS = -Dmain=dropbearkey_main
 
-LIBDROPBEAR_CFLAGS-y +=  $(LIBDROPBEAR_FLAGS)
+LIBDROPBEAR_CFLAGS-y += -DDROPBEAR_SERVER 
 LIBDROPBEAR_TOMCRYPT_CFLAGS-y += -DLTC_SOURCE
 
 CINCLUDES-y += -I$(LIBDROPBEAR_BASE)/include
