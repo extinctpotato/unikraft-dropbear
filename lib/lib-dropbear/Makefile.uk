@@ -13,9 +13,9 @@ $(eval $(call addlib_s,libdropbear,$(CONFIG_LIBDROPBEAR)))
 LIBDROPBEAR_VERSION = 2022.83
 LIBDROPBEAR_BASENAME = dropbear-$(LIBDROPBEAR_VERSION)
 LIBDROPBEAR_URL = https://matt.ucc.asn.au/dropbear/releases/$(LIBDROPBEAR_BASENAME).tar.bz2 
-#LIBDROPBEAR_PATCHDIR = $(LIBDROPBEAR_BASE)/patches
+LIBDROPBEAR_PATCHDIR = $(LIBDROPBEAR_BASE)/patches
 $(eval $(call fetch,libdropbear,$(LIBDROPBEAR_URL)))
-#$(eval $(call patch,libdropbear,$(LIBDROPBEAR_PATCHDIR),$(LIBDROPBEAR_BASENAME)))
+$(eval $(call patch,libdropbear,$(LIBDROPBEAR_PATCHDIR),$(LIBDROPBEAR_BASENAME)))
 
 LIBDROPBEAR_SRC = $(LIBDROPBEAR_ORIGIN)/$(LIBDROPBEAR_BASENAME)
 
