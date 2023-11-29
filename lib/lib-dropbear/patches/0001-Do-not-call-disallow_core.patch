@@ -1,0 +1,25 @@
+From 6018a0c5e28d774a70d74526c2015234d31ebb7e Mon Sep 17 00:00:00 2001
+From: Adam Olech <me@aole.ch>
+Date: Wed, 29 Nov 2023 01:02:07 +0100
+Subject: [PATCH] Do not call disallow_core
+
+---
+ svr-main.c | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/svr-main.c b/svr-main.c
+index 9234361..dd939d1 100644
+--- a/svr-main.c
++++ b/svr-main.c
+@@ -53,8 +53,6 @@ int main(int argc, char ** argv)
+ 	_dropbear_exit = svr_dropbear_exit;
+ 	_dropbear_log = svr_dropbear_log;
+ 
+-	disallow_core();
+-
+ 	if (argc < 1) {
+ 		dropbear_exit("Bad argc");
+ 	}
+-- 
+2.43.0
+
